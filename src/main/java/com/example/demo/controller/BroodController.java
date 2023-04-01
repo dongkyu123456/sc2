@@ -30,7 +30,7 @@ public class BroodController {
 
     @GetMapping("/terran")
     public List<UnitDTO> getTerranUnits() {
-        return unitRepo.findByBrood(BroodType.terran).stream().map(UnitDTO::new).collect(Collectors.toList());
+        return unitRepo.findByBroodBrood(BroodType.terran).stream().map(UnitDTO::new).collect(Collectors.toList());
     }
 
     @GetMapping("/terran/grand")
@@ -42,8 +42,8 @@ public class BroodController {
         return "terran/sky";
     }
     @GetMapping("/protoss")
-    public String protoss() {
-        return "protoss";
+    public List<UnitDTO> getProtossUnits() {
+        return unitRepo.findByBroodBrood(BroodType.protoss).stream().map(UnitDTO::new).collect(Collectors.toList());
     }
     @GetMapping("/protoss/grand")
     private String protossGrand() {
@@ -55,8 +55,8 @@ public class BroodController {
     }
 
     @GetMapping("/zerg")
-    public String zerg() {
-        return "zerg";
+    public List<UnitDTO> getZergUnits() {
+        return unitRepo.findByBroodBrood(BroodType.zerg).stream().map(UnitDTO::new).collect(Collectors.toList());
     }
     @GetMapping("/zerg/grand")
     private String zergGrand() {

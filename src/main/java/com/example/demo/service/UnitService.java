@@ -6,9 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.UnitDTO;
-import com.example.demo.entity.Brood;
 import com.example.demo.entity.BroodType;
-import com.example.demo.entity.Unit;
 import com.example.demo.repository.UnitRepo;
 
 import jakarta.transaction.Transactional;
@@ -33,10 +31,17 @@ public class UnitService {
 // 테란 유닛 조회
     @Transactional
     public List<UnitDTO> readterranUnits() {
-        return unitRepo.findByBrood(BroodType.terran)
+        return unitRepo.findByBroodBrood(BroodType.terran)
                 .stream()
                 .map(UnitDTO::new)
                 .collect(Collectors.toList());
     }
+    // @Transactional
+    // public List<UnitDTO> readgrandUnits() {
+    //     return unitRepo.findByGrand(BroodType.false)
+    //             .stream()
+    //             .map(UnitDTO::new)
+    //             .collect(Collectors.toList());
+    // }
 
 }

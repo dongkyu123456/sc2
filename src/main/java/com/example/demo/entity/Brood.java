@@ -3,8 +3,6 @@ package com.example.demo.entity;
 // import javax.validation.constraints.Pattern;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,11 +14,12 @@ public class Brood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pk;
-
-    @Enumerated(EnumType.ORDINAL)
     private BroodType brood;
 }
 
+// public enum BroodType{
+//     none, terran, protoss, zerg
+// }
 
 
 // @Pattern(regexp = "^('terran'|'zerg'|'protoss')$")
