@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+// import javax.validation.constraints.Pattern;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -20,5 +22,6 @@ public class Brood {
 }
 
 
+
 // @Pattern(regexp = "^('terran'|'zerg'|'protoss')$")
-// private String brood;
+// private Integer brood;

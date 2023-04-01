@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.UnitDTO;
+import com.example.demo.entity.BroodType;
+import com.example.demo.entity.Unit;
 import com.example.demo.repository.UnitRepo;
 
 import jakarta.transaction.Transactional;
@@ -21,10 +23,11 @@ public class UnitService {
 
     /* 유닛 전체 조회 */
     @Transactional
-    public List<UnitDTO> readAllPosts() {
+    public List<UnitDTO> readAllUnits() {
         return unitRepo.findByOrderByPkDesc()
                 .map(UnitDTO::new)
                 .collect(Collectors.toList());
     }
+
 
 }

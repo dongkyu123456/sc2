@@ -1,0 +1,12 @@
+INSERT INTO brood (brood) VALUES
+(1),
+(2),
+(3);
+
+INSERT INTO unit (name, grand, brood) VALUES
+('해병', TRUE, 1),
+('의료선', FALSE, 1),
+('추적자', TRUE, 2),
+('예언자', FALSE, 2),
+('군단숙주', TRUE, 3),
+('대군주', FALSE, 3);

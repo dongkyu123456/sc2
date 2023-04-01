@@ -1,24 +1,41 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.service.UnitService;
+import com.example.demo.dto.UnitDTO;
+import com.example.demo.entity.Brood;
+import com.example.demo.entity.BroodType;
+import com.example.demo.entity.Unit;
+import com.example.demo.repository.UnitRepo;
+
+
 
 @RestController
 @RequestMapping({ "/", "" })
 public class BroodController {
-    // @GetMapping("/{name}")
-    // public String name() {
-    //     return "name";
-    // }
-    @GetMapping("/terran")
-    private String terran() {
-        return "terran";
+
+    private final UnitRepo unitRepo;
+    public BroodController(UnitRepo unitRepo){
+        this.unitRepo = unitRepo;
     }
+
+    @GetMapping("/all")
+    public List<UnitDTO> getAllUnits() {
+        return unitRepo.findAll().stream().map(UnitDTO::new).collect(Collectors.toList());
+    }
+
+    // @GetMapping("/terran")
+    // public List<UnitDTO> getAllTerranUnits() {
+        // List<UnitDTO> TerranUnits = 
+        // return unitRepo.findAll().stream().map(UnitDTO::new).collect(Collectors.toList());
+    // }
+
     @GetMapping("/terran/grand")
     private String terranGrand() {
         return "terran/grand";
