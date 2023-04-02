@@ -12,5 +12,7 @@ public interface UnitRepo extends JpaRepository<Unit,Integer> {
     Stream<Unit> findByOrderByPkDesc();
     List<Unit> findByBroodBrood(BroodType broodType);
     List<Unit> findByGrand(Boolean grand);
+    List<Unit> findByBroodBroodAndGrand(BroodType broodType, boolean grand);
+    List<Unit> findByName(String name);
 
 }

@@ -8,9 +8,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Entity
+@Setter
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +28,7 @@ public class Unit {
     @JoinColumn(name = "brood")
     private Brood brood;
 
+    public Unit() {
+        // default constructor
+    }
 }

@@ -36,12 +36,13 @@ public class UnitService {
                 .map(UnitDTO::new)
                 .collect(Collectors.toList());
     }
-    // @Transactional
-    // public List<UnitDTO> readgrandUnits() {
-    //     return unitRepo.findByGrand(BroodType.false)
-    //             .stream()
-    //             .map(UnitDTO::new)
-    //             .collect(Collectors.toList());
-    // }
+//지상유닛 조회
+    @Transactional
+    public List<UnitDTO> readgrandUnits() {
+        return unitRepo.findByGrand(true)
+                .stream()
+                .map(UnitDTO::new)
+                .collect(Collectors.toList());
+    }
 
 }
