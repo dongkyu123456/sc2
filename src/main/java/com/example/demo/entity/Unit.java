@@ -28,7 +28,7 @@ public class Unit {
     @JoinColumn(name = "brood")
     private Brood brood;
 
-    public Unit() {
-        // default constructor
-    }
+    // public Unit() {
+    //     // default constructor
+    // }
 }
