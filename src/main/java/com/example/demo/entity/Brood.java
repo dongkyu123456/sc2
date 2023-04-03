@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.Column;
+
 // import javax.validation.constraints.Pattern;
 
 import jakarta.persistence.Entity;
@@ -16,6 +18,7 @@ public class Brood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pk;
+    @Column
     private BroodType brood;
 }
 

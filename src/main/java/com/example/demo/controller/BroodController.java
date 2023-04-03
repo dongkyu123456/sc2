@@ -22,7 +22,7 @@ public class BroodController {
         this.unitRepo = unitRepo;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/unit")
     public List<UnitDTO> getAllUnits() {
         return unitRepo.findAll().stream().map(UnitDTO::new).collect(Collectors.toList());
     }
