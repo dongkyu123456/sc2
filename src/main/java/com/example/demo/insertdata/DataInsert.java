@@ -18,23 +18,26 @@ public class DataInsert {
         tx.begin();
 
         try{       
-        Brood terran = new Brood();
-        terran.setBrood(BroodType.terran);
+        Brood brood = new Brood();
+        brood.setBrood(BroodType.zerg);
 
-        Unit liberationShip = new Unit();
-        liberationShip.setName("liberationShip");
-        liberationShip.setGrand(false);
-        liberationShip.setBrood(terran);
+        Unit unit = new Unit();
+        unit.setName("타락귀");
+        unit.setGrand(false);
+        unit.setBrood(brood);
         
-        em.persist(terran);
-        em.persist(liberationShip);
+        em.persist(brood);
+        em.persist(unit);
+
+        tx.commit();
     }
     catch (Exception e) {
         tx.rollback();
+        e.printStackTrace();
     }
     finally {
         em.close();
-    }
         emf.close();
+    }
 }
 }
