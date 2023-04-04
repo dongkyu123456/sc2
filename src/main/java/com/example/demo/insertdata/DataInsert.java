@@ -19,10 +19,10 @@ public class DataInsert {
 
         try{       
         Brood brood = new Brood();
-        brood.setBrood(BroodType.zerg);
+        brood.setBrood(BroodType.terran);
 
         Unit unit = new Unit();
-        unit.setName("타락귀");
+        unit.setName("밤까마귀");
         unit.setGrand(false);
         unit.setBrood(brood);
         
